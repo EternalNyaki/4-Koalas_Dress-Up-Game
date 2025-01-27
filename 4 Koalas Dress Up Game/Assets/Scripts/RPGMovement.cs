@@ -8,12 +8,12 @@ public class RPGMovement : MonoBehaviour
     public float moveSpeed;
 
     //Vector for storing inputs
-    private Vector2 _inputVector;
+    protected Vector2 _inputVector;
 
-    private int k_horizontalHash, k_verticalHash, k_speedHash;
+    private int _horizontalHash, _verticalHash, _speedHash;
 
-    private Rigidbody2D _rb2d;
-    private Animator _animator;
+    protected Rigidbody2D _rb2d;
+    protected Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -21,20 +21,20 @@ public class RPGMovement : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
-        k_horizontalHash = Animator.StringToHash("Horizontal");
-        k_verticalHash = Animator.StringToHash("Vertical");
-        k_speedHash = Animator.StringToHash("Speed");
+        _horizontalHash = Animator.StringToHash("Horizontal");
+        _verticalHash = Animator.StringToHash("Vertical");
+        _speedHash = Animator.StringToHash("Speed");
     }
 
     // Update is called once per frame
     void Update()
     {
-        _animator.SetFloat(k_horizontalHash, Input.GetAxisRaw("Horizontal"));
-        _animator.SetFloat(k_verticalHash, Input.GetAxisRaw("Vertical"));
+        _animator.SetFloat(_horizontalHash, Input.GetAxisRaw("Horizontal"));
+        _animator.SetFloat(_verticalHash, Input.GetAxisRaw("Vertical"));
 
         _inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
-        _animator.SetFloat(k_speedHash, _inputVector.magnitude * moveSpeed);
+        _animator.SetFloat(_speedHash, _inputVector.magnitude * moveSpeed);
     }
 
     void FixedUpdate()
@@ -42,7 +42,9 @@ public class RPGMovement : MonoBehaviour
         Move();
     }
 
-    protected void Move()
+    //Override this method for custom movement logic
+    //Evaluated on physics update
+    protected virtual void Move()
     {
         _rb2d.MovePosition((Vector2)transform.position + _inputVector * moveSpeed * Time.deltaTime);
     }
