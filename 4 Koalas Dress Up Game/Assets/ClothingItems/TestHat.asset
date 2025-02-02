@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4940732795bef4689b37ded5010d4e, type: 3}
   m_Name: TestHat
   m_EditorClassIdentifier: 
-  itemName: 
   type: 0
-  image: {fileID: 0}
+  sprite: {fileID: -871678512, guid: 415e76b4bee36f440b538deae63fd5cb, type: 3}

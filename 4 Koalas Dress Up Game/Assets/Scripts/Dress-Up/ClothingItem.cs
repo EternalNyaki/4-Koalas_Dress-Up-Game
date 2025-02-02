@@ -15,5 +15,5 @@ public enum ClothingType
 public class ClothingItem : ScriptableObject
 {
     public ClothingType type;
-    public Sprite image;
+    public Sprite sprite;
 }

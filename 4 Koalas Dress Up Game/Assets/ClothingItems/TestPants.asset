@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4940732795bef4689b37ded5010d4e, type: 3}
   m_Name: TestPants
   m_EditorClassIdentifier: 
-  itemName: 
-  type: 0
+  type: 2
   image: {fileID: 0}

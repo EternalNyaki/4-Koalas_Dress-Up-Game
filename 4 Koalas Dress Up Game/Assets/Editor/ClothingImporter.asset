@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7347a464e773042bf45bb842ff4a3d, type: 3}
   m_Name: ClothingImporter
   m_EditorClassIdentifier: 
-  excelFilePath: Editor/PotionCrafting.xlsx
+  excelFilePath: Editor/ClothingData.xlsx
