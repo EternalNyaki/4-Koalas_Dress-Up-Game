@@ -55,6 +55,11 @@ public class DressUpMenu : MonoBehaviour
         {
             ShiftSelection(Direction.Down);
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            ConfirmSelection();
+        }
     }
 
     public void ShiftSelection(Direction direction)
@@ -120,5 +125,10 @@ public class DressUpMenu : MonoBehaviour
         if (_selectedIndex != null) { _clothingItems[_selectedIndex.x, _selectedIndex.y].ChangeFrameColor(Color.black); }
         _selectedIndex = index;
         _clothingItems[_selectedIndex.x, _selectedIndex.y].ChangeFrameColor(Color.gray);
+    }
+
+    public void ConfirmSelection()
+    {
+        PlayerManager.Instance.SetClothing(_clothingItems[_selectedIndex.x, _selectedIndex.y].data);
     }
 }

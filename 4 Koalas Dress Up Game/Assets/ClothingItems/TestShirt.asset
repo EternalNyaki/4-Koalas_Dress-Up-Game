@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TestShirt
   m_EditorClassIdentifier: 
   type: 1
-  image: {fileID: 0}
+  sprite: {fileID: 0}
