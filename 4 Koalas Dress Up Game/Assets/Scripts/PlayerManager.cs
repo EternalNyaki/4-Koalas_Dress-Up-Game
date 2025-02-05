@@ -15,25 +15,27 @@ public class PlayerManager : Singleton<PlayerManager>
     public ClothingItem pants { get; private set; }
     public ClothingItem shoes { get; private set; }
 
+    public event EventHandler<ClothingType> OutfitChanged;
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        if (defaultHat != null && defaultHat.type != ClothingType.Hat)
+        if (defaultHat?.type != ClothingType.Hat)
         {
             Debug.LogError("Hat must be a hat");
             defaultHat = null;
         }
-        if (defaultShirt != null && defaultShirt.type != ClothingType.Shirt)
+        if (defaultShirt?.type != ClothingType.Shirt)
         {
             Debug.LogError("Shirt must be a shirt");
             defaultShirt = null;
         }
-        if (defaultPants != null && defaultPants.type != ClothingType.Pants)
+        if (defaultPants?.type != ClothingType.Pants)
         {
             Debug.LogError("Pants must be pants");
             defaultPants = null;
         }
-        if (defaultShoes != null && defaultShoes.type != ClothingType.Shoes)
+        if (defaultShoes?.type != ClothingType.Shoes)
         {
             Debug.LogError("Shoes must be shoes");
             defaultShoes = null;
@@ -71,5 +73,7 @@ public class PlayerManager : Singleton<PlayerManager>
                 shoes = item;
                 break;
         }
+
+        OutfitChanged?.Invoke(this, item.type);
     }
 }

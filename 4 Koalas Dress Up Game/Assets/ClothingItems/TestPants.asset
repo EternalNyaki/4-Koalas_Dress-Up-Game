@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TestPants
   m_EditorClassIdentifier: 
   type: 2
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ed109873501978247bd32d838153ccf6, type: 3}
