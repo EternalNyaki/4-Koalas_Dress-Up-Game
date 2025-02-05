@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ClothingDisplay : MonoBehaviour
 {
+    //Image components for each clothing item
     public Image hatImage;
     public Image shirtImage;
     public Image pantsImage;
@@ -14,14 +15,17 @@ public class ClothingDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Subscribe to OutfitChanged event
         PlayerManager.Instance.OutfitChanged += ChangeOutfit;
 
+        //Set initial image sprites
         hatImage.sprite = PlayerManager.Instance.hat.sprite;
         shirtImage.sprite = PlayerManager.Instance.shirt.sprite;
         pantsImage.sprite = PlayerManager.Instance.pants.sprite;
         shoesImage.sprite = PlayerManager.Instance.shoes.sprite;
     }
 
+    //Change Outfit event handler, must be subscribed to the PlayerManager's OutfitChanged event
     private void ChangeOutfit(object sender, ClothingType type)
     {
         if (sender.GetType() != typeof(PlayerManager)) { return; }

@@ -5,21 +5,27 @@ using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
+    //Default outfit
     public ClothingItem defaultHat;
     public ClothingItem defaultShirt;
     public ClothingItem defaultPants;
     public ClothingItem defaultShoes;
 
+    //Current outfit
     public ClothingItem hat { get; private set; }
     public ClothingItem shirt { get; private set; }
     public ClothingItem pants { get; private set; }
     public ClothingItem shoes { get; private set; }
 
+    //Outfit Changed event
     public event EventHandler<ClothingType> OutfitChanged;
 
 #if UNITY_EDITOR
+    //OnValidate is called whenever the script is loaded or a value changes in the Inspector (Editor-only)
     private void OnValidate()
     {
+        //Validate clothing types for each clothing slot
+        //TODO: Update warning messages for clarity
         if (defaultHat?.type != ClothingType.Hat)
         {
             Debug.LogError("Hat must be a hat");
@@ -47,12 +53,15 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         base.Initialize();
 
+        //Initialize outfit
         hat = defaultHat;
         shirt = defaultShirt;
         pants = defaultPants;
         shoes = defaultShoes;
     }
 
+    //Set Clothing method
+    //Sets the clothing item for the slot of the type of the given item
     public void SetClothing(ClothingItem item)
     {
         switch (item.type)
@@ -74,6 +83,12 @@ public class PlayerManager : Singleton<PlayerManager>
                 break;
         }
 
-        OutfitChanged?.Invoke(this, item.type);
+        OnOutfitChanged(item.type);
+    }
+
+    //Method to invoke Outfit Changed event
+    protected virtual void OnOutfitChanged(ClothingType e)
+    {
+        OutfitChanged?.Invoke(this, e);
     }
 }

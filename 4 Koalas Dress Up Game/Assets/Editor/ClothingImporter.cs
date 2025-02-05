@@ -47,7 +47,7 @@ public class ClothingImporter : ScriptableObject
 
 
 //Editor class for the clothing importer
-//Create an Import button in the inspector
+//Creates an Import button in the inspector
 [CustomEditor(typeof(ClothingImporter))]
 public class ClothingImporterEditor : Editor
 {
