@@ -29,10 +29,19 @@ public class RPGMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _animator.SetFloat(_horizontalHash, Input.GetAxisRaw("Horizontal"));
-        _animator.SetFloat(_verticalHash, Input.GetAxisRaw("Vertical"));
+        GetInputs();
+    }
 
+    protected virtual void GetInputs()
+    {
         _inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
+        //Freeze direction if no input
+        if (_inputVector.magnitude > 0f)
+        {
+            _animator.SetFloat(_horizontalHash, Input.GetAxisRaw("Horizontal"));
+            _animator.SetFloat(_verticalHash, Input.GetAxisRaw("Vertical"));
+        }
 
         _animator.SetFloat(_speedHash, _inputVector.magnitude * moveSpeed);
     }
