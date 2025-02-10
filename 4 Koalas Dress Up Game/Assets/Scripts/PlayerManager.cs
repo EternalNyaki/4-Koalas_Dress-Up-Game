@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
@@ -19,6 +20,10 @@ public class PlayerManager : Singleton<PlayerManager>
 
     //Outfit Changed event
     public event EventHandler<ClothingType> OutfitChanged;
+
+    public AudioClip exitSound;
+
+    private AudioSource _audioSource;
 
 #if UNITY_EDITOR
     //OnValidate is called whenever the script is loaded or a value changes in the Inspector (Editor-only)
@@ -52,6 +57,9 @@ public class PlayerManager : Singleton<PlayerManager>
     protected override void Initialize()
     {
         base.Initialize();
+
+        //Get components
+        _audioSource = GetComponent<AudioSource>();
 
         //Initialize outfit
         hat = defaultHat;
@@ -90,5 +98,18 @@ public class PlayerManager : Singleton<PlayerManager>
     protected virtual void OnOutfitChanged(ClothingType e)
     {
         OutfitChanged?.Invoke(this, e);
+    }
+
+    public void SetScene(int sceneID)
+    {
+        //HACK: This is a really dumb stupid way of doing this and it sucks
+        StartCoroutine(LoadDelay(0.5f, sceneID));
+    }
+
+    private IEnumerator LoadDelay(float delayTime, int sceneID)
+    {
+        _audioSource.PlayOneShot(exitSound);
+        yield return new WaitForSeconds(delayTime);
+        SceneManager.LoadScene(sceneID);
     }
 }

@@ -23,6 +23,8 @@ public class DressUpMenu : MonoBehaviour
     //Reference to ScrollView scrollbar
     public Scrollbar scrollbar;
 
+    public AudioClip selectSound;
+
     //2D array of items in the inventory
     private DressUpItem[,] _clothingItems;
     //Currently selected index in the inventory
@@ -31,9 +33,14 @@ public class DressUpMenu : MonoBehaviour
     //Array of scroll values for each column of the inventory for auto-scrolling
     private int[] _scrollValuesForOutfits;
 
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Get components
+        _audioSource = GetComponent<AudioSource>();
+
         //Initialize clothing items array
         _clothingItems = new DressUpItem[dressUpInventory.GetComponentsInChildren<VerticalLayoutGroup>().Length,
                                         dressUpInventory.transform.GetChild(0).GetComponentsInChildren<DressUpItem>().Length];
@@ -88,6 +95,7 @@ public class DressUpMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             ConfirmSelection();
+            _audioSource.PlayOneShot(selectSound);
         }
     }
 

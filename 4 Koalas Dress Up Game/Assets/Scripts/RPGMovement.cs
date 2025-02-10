@@ -10,6 +10,9 @@ public class RPGMovement : MonoBehaviour
     //Vector for storing inputs
     protected Vector2 _inputVector;
 
+    protected bool _isMoving;
+    protected bool _wasMoving;
+
     private int _horizontalHash, _verticalHash, _speedHash;
 
     protected Rigidbody2D _rb2d;
@@ -18,9 +21,16 @@ public class RPGMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();
+    }
+
+    protected virtual void Initialize()
+    {
+        //Get components
         _rb2d = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
+        //Set animator hashes
         _horizontalHash = Animator.StringToHash("Horizontal");
         _verticalHash = Animator.StringToHash("Vertical");
         _speedHash = Animator.StringToHash("Speed");
@@ -39,16 +49,41 @@ public class RPGMovement : MonoBehaviour
         //Freeze direction if no input
         if (_inputVector.magnitude > 0f)
         {
+            _isMoving = true;
+
             _animator.SetFloat(_horizontalHash, Input.GetAxisRaw("Horizontal"));
             _animator.SetFloat(_verticalHash, Input.GetAxisRaw("Vertical"));
         }
+        else
+        {
+            _isMoving = false;
+        }
 
         _animator.SetFloat(_speedHash, _inputVector.magnitude * moveSpeed);
+
+        if (_isMoving && !_wasMoving)
+        {
+            OnStartMove();
+        }
+        if (!_isMoving && _wasMoving)
+        {
+            OnEndMove();
+        }
+
+        _wasMoving = _isMoving;
     }
+
+    //TODO: Comment this shit
+    protected virtual void OnStartMove() { }
+
+    protected virtual void OnEndMove() { }
 
     void FixedUpdate()
     {
-        Move();
+        if (_inputVector.magnitude > 0f)
+        {
+            Move();
+        }
     }
 
     //Override this method for custom movement logic
