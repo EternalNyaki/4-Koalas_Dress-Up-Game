@@ -18,7 +18,7 @@ public class PauseModeManager : Singleton<PauseModeManager>
     public PauseMode pauseMode;
 
     //Canvas holding the dialogue box
-    public Canvas dialogueCanvas;
+    public GameObject textBox;
     //Reference to the script controlling the player's movement
     public RPGMovement playerMovement;
 
@@ -39,15 +39,25 @@ public class PauseModeManager : Singleton<PauseModeManager>
         switch (mode)
         {
             case PauseMode.Unpaused:
-                dialogueCanvas.gameObject.SetActive(false);
+                textBox.gameObject.SetActive(false);
 
                 playerMovement.enabled = true;
+
+                foreach (var v in FindObjectsOfType<InteractableObject>())
+                {
+                    v.enabled = true;
+                }
                 break;
 
             case PauseMode.Dialogue:
-                dialogueCanvas.gameObject.SetActive(true);
+                textBox.gameObject.SetActive(true);
 
                 playerMovement.enabled = false;
+
+                foreach (var v in FindObjectsOfType<InteractableObject>())
+                {
+                    v.enabled = false;
+                }
                 break;
         }
 

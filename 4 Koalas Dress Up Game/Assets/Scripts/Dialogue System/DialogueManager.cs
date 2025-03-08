@@ -19,16 +19,25 @@ public class DialogueManager : Singleton<DialogueManager>
     //Currently selected dialogue choice
     private int _selectedChoice = 0;
 
-    void OnEnable()
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        SetStory(inkAsset);
+    }
+
+    public void SetStory(TextAsset inkStory)
     {
         //Load story object
-        story = new Story(inkAsset.text);
+        story = new Story(inkStory.text);
         mainText.text = story.Continue();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (PauseModeManager.Instance.pauseMode != PauseMode.Dialogue) { return; }
+
         if (story.canContinue)
         {
             //Play next line of dialogue on interaction
@@ -74,8 +83,8 @@ public class DialogueManager : Singleton<DialogueManager>
             //If there is no more dialogue, resume game on interaction
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
                 story.ResetState();
+                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
     }
