@@ -87,6 +87,16 @@ Tilemap:
   m_GameObject: {fileID: 8243134966551842028}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 1, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 36
+      m_TileSpriteIndex: 36
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -2, y: -5, z: 0}
     second:
       serializedVersion: 2
@@ -521,6 +531,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 614fc3732eee3254b87d29b5cf9a3349, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d32df5adbe23ba64f91085f51527aadc, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 06cfa2e8833e2a8468c42c31c4f80883, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 1183965129, guid: 42c7a175b834f724f91212d9eb983e42, type: 3}
@@ -594,8 +606,10 @@ Tilemap:
     m_Data: {fileID: 1296292302, guid: 66767b4d74fdc3f4b9d8c636d271ab56, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 590916334, guid: 66767b4d74fdc3f4b9d8c636d271ab56, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 023531b3d94de0d4386f8043489ffd01, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 36
+  - m_RefCount: 37
     m_Data:
       e00: 1
       e01: 0
@@ -614,13 +628,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 36
+  - m_RefCount: 37
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -2, y: -5, z: 0}
-  m_Size: {x: 9, y: 7, z: 1}
+  m_Origin: {x: -2, y: -9, z: 0}
+  m_Size: {x: 9, y: 11, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -689,7 +703,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &2867256855593159520
+--- !u!114 &5178140636855226484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
