@@ -11,7 +11,7 @@ public class DialogueObject : InteractableObject
 
     public override void Interact()
     {
-        DialogueManager.Instance.inkAsset = dialogue;
+        DialogueManager.Instance.SetStory(dialogue);
         PauseModeManager.Instance.SetPauseMode(PauseMode.Dialogue);
     }
 }
