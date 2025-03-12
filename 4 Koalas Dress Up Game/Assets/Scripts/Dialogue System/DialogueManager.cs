@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using TMPro;
+using System;
 
 //Dialogue Manager
 //Handles reading dialogue from an Ink story asset and writing it to the dialogue box
@@ -74,6 +75,14 @@ public class DialogueManager : Singleton<DialogueManager>
             //Select dialogue option on interaction
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                var choiceData = new DialogueChoiceData()
+                {
+                    selectedChoiceIndex = _selectedChoice,
+                    choicePrompt = story.currentText,
+                    selectedChoice = story.currentChoices[_selectedChoice].text
+                };
+                TelemetryLogger.Log(this, "Dialogue Choice", choiceData);
+
                 story.ChooseChoiceIndex(_selectedChoice);
                 mainText.text = story.Continue();
             }
@@ -88,4 +97,13 @@ public class DialogueManager : Singleton<DialogueManager>
             }
         }
     }
+}
+
+
+[Serializable]
+public struct DialogueChoiceData
+{
+    public int selectedChoiceIndex;
+    public string choicePrompt;
+    public string selectedChoice;
 }
