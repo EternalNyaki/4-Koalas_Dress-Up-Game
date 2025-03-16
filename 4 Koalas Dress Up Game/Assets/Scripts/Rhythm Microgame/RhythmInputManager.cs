@@ -11,6 +11,8 @@ public class RhythmInputManager : MonoBehaviour
 
     public GameObject notePrefab;
 
+    public Sprite defaultSprite, upDanceSprite, downDanceSprite, leftDanceSprite, rightDanceSprite;
+
     public float leniency;
 
     private Conductor _conductor;
@@ -104,6 +106,25 @@ public class RhythmInputManager : MonoBehaviour
 
     private void VisualUpdate()
     {
-
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            playerSprite.sprite = upDanceSprite;
+        }
+        else if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            playerSprite.sprite = upDanceSprite;
+        }
+        else if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            playerSprite.sprite = rightDanceSprite;
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            playerSprite.sprite = leftDanceSprite;
+        }
+        else
+        {
+            playerSprite.sprite = defaultSprite;
+        }
     }
 }
