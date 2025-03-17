@@ -18,6 +18,9 @@ public class PlayerManager : Singleton<PlayerManager>
     public ClothingItem pants { get; private set; }
     public ClothingItem shoes { get; private set; }
 
+    public int discoScore { get; private set; }
+    public int discoMaxScore { get; private set; }
+
     //Outfit Changed event
     public event EventHandler<ClothingType> OutfitChanged;
 
@@ -58,6 +61,8 @@ public class PlayerManager : Singleton<PlayerManager>
     {
         base.Initialize();
 
+        DontDestroyOnLoad(gameObject);
+
         //Get components
         _audioSource = GetComponent<AudioSource>();
 
@@ -66,6 +71,8 @@ public class PlayerManager : Singleton<PlayerManager>
         shirt = defaultShirt;
         pants = defaultPants;
         shoes = defaultShoes;
+
+        discoScore = 0;
     }
 
     //Set Clothing method
@@ -94,22 +101,28 @@ public class PlayerManager : Singleton<PlayerManager>
         OnOutfitChanged(item.type);
     }
 
+    public void SetDiscoScore(int score, int maxScore)
+    {
+        discoScore = score;
+        discoMaxScore = maxScore;
+    }
+
     //Method to invoke Outfit Changed event
     protected virtual void OnOutfitChanged(ClothingType e)
     {
         OutfitChanged?.Invoke(this, e);
     }
 
-    public void SetScene(int sceneID)
+    public void SetScene(string sceneName)
     {
         //HACK: This is a really dumb stupid way of doing this and it sucks
-        StartCoroutine(LoadDelay(0.5f, sceneID));
+        StartCoroutine(LoadDelay(0.5f, sceneName));
     }
 
-    private IEnumerator LoadDelay(float delayTime, int sceneID)
+    private IEnumerator LoadDelay(float delayTime, string sceneName)
     {
         _audioSource.PlayOneShot(exitSound);
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene(sceneID);
+        SceneManager.LoadScene(sceneName);
     }
 }

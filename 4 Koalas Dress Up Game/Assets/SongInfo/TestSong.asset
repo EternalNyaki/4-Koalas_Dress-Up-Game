@@ -15,7 +15,7 @@ MonoBehaviour:
   bpm: 128
   offset: 1.866
   countIn: 4
-  duration: 215.6
+  duration: 20
   audio: {fileID: 8300000, guid: 24ba69f6dfa353e4dba218f469960105, type: 3}
   chartInfo:
   - direction: 0

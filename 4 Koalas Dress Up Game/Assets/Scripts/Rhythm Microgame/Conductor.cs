@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RhythmMicrogame
 {
@@ -24,15 +25,6 @@ namespace RhythmMicrogame
             audioPlayer = GetComponent<AudioSource>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (playing)
-            {
-                songPosition = (float)(AudioSettings.dspTime - dspStartTime - song.offset) / song.crotchet;
-            }
-        }
-
         public bool isPlaying()
         {
             return playing;
@@ -47,7 +39,12 @@ namespace RhythmMicrogame
             }
         }
 
-        public IEnumerator Play()
+        public void Play()
+        {
+            StartCoroutine(PlayCoroutine());
+        }
+
+        private IEnumerator PlayCoroutine()
         {
             if (song.crotchet * 4 > song.offset)
             {
@@ -63,16 +60,24 @@ namespace RhythmMicrogame
             }
             dspStartTime = (float)AudioSettings.dspTime;
             playing = true;
+
+            while (songPosition * song.crotchet < song.duration)
+            {
+                songPosition = (float)(AudioSettings.dspTime - dspStartTime - song.offset) / song.crotchet;
+
+                yield return null;
+            }
+
+            SceneManager.LoadScene("Rhythm Microgame Results");
         }
 
         private IEnumerator CountIn()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
                 audioPlayer.PlayOneShot(countInAudio);
                 yield return new WaitForSeconds(song.crotchet);
             }
-            audioPlayer.PlayOneShot(countInAudio);
         }
     }
 }

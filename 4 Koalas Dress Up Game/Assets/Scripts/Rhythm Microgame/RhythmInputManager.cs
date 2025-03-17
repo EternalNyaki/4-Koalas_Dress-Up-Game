@@ -41,7 +41,7 @@ public class RhythmInputManager : MonoBehaviour
         _score = 0;
         _maxScore = _notes.Count;
 
-        StartCoroutine(_conductor.Play());
+        _conductor.Play();
     }
 
     // Update is called once per frame
@@ -51,6 +51,7 @@ public class RhythmInputManager : MonoBehaviour
         VisualUpdate();
 
         scoreText.text = "Score: " + _score + "/" + _maxScore;
+        PlayerManager.Instance.SetDiscoScore(_score, _maxScore);
     }
 
     private void NotesUpdate()
