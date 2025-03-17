@@ -13,14 +13,22 @@ public class DialogueManager : Singleton<DialogueManager>
     //UI text to write dialogue to
     public TMP_Text mainText;
 
+    //Audio clip to play when the player presses the interact button
+    public AudioClip interactSound;
+
     //Story object loaded from Ink asset
     private Story story;
 
     //Currently selected dialogue choice
     private int _selectedChoice = 0;
 
+    //Audio source component
+    private AudioSource _audioSource;
+
     protected override void Initialize()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         base.Initialize();
 
         SetStory(inkAsset);
@@ -43,6 +51,7 @@ public class DialogueManager : Singleton<DialogueManager>
             //Play next line of dialogue on interaction
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                _audioSource.PlayOneShot(interactSound);
                 mainText.text = story.Continue();
             }
         }
@@ -74,6 +83,7 @@ public class DialogueManager : Singleton<DialogueManager>
             //Select dialogue option on interaction
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                _audioSource.PlayOneShot(interactSound);
                 story.ChooseChoiceIndex(_selectedChoice);
                 mainText.text = story.Continue();
             }
@@ -83,6 +93,7 @@ public class DialogueManager : Singleton<DialogueManager>
             //If there is no more dialogue, resume game on interaction
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                _audioSource.PlayOneShot(interactSound);
                 story.ResetState();
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }

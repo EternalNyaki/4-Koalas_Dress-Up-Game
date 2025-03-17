@@ -2,15 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Interactable Object component
-//Component that lets an object output a message to the console which interacted with by the player
-public class InteractableObject : MonoBehaviour
+//Interactable Object component base class
+//Component that lets an object recognize interaction from the player
+public abstract class InteractableObject : MonoBehaviour
 {
-    //The string that will be output to the console when the interaction is triggered
-    public string interactionResponse;
+    //Interaction initiated sound
+    public AudioClip interactSound;
+
+    //Audio component for interaction sound
+    private AudioSource _audioSource;
 
     //Reference to a player that could interact with this object
     private PlayerController _player = null;
+
+    void Start()
+    {
+        Initialize();
+    }
+
+    //Method to override for any initialization code
+    //Called in Start()
+    protected virtual void Initialize()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,10 +52,10 @@ public class InteractableObject : MonoBehaviour
     }
 
     //Interact Method
-    //Writes a message to the console when a player interacts with this object
+    //Runs when the player interacts with this object
     //Can be overriden for alternative functionality
     public virtual void Interact()
     {
-        Debug.Log(gameObject.name + ": \"" + interactionResponse + "\"");
+        _audioSource.PlayOneShot(interactSound);
     }
 }
