@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TestShirt
   m_EditorClassIdentifier: 
   type: 1
-  sprite: {fileID: 21300000, guid: 71ac0401b8445b946910a92fa0b58485, type: 3}
+  sprite: {fileID: 21300000, guid: d99927c3ac1caef498f1055672018c6b, type: 3}

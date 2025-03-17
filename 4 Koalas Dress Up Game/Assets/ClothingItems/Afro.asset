@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Afro
   m_EditorClassIdentifier: 
   type: 0
-  sprite: {fileID: 21300000, guid: 77d86bd475b36e247b288baf1305ee79, type: 3}
+  sprite: {fileID: 21300000, guid: 6b0fdde2e195c0d43982627017e6325f, type: 3}

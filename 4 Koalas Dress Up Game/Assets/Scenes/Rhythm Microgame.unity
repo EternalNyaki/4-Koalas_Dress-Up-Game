@@ -519,11 +519,11 @@ MonoBehaviour:
   playerSprite: {fileID: 1972019732}
   song: {fileID: 11400000, guid: 8557e5ab704c52b4eb080e9b8771523d, type: 2}
   notePrefab: {fileID: 3644968423853663858, guid: 60c02f56fa3c96c409fab058d416dba7, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 47cbfd38760342143a430e995a4e4899, type: 3}
-  upDanceSprite: {fileID: 21300000, guid: 31f81382924953e458d33d1980cc7d44, type: 3}
-  downDanceSprite: {fileID: 21300000, guid: d751b85c43dad154192914b1f6fb15a4, type: 3}
-  leftDanceSprite: {fileID: 21300000, guid: 5e63f6067bebe544b9944a245d547501, type: 3}
-  rightDanceSprite: {fileID: 21300000, guid: 3f5887a5dc2286e4e8dfc0cb0174c12e, type: 3}
+  defaultSprite: {fileID: 21300000, guid: c18073f87a53f1f4583f6528dd39cbfe, type: 3}
+  upDanceSprite: {fileID: 21300000, guid: d1ad9a2d23b6d8c4ea3fdcfd6ffe480b, type: 3}
+  downDanceSprite: {fileID: 21300000, guid: e0573676fa20fb2409efe6f25ef33c00, type: 3}
+  leftDanceSprite: {fileID: 21300000, guid: 446fa65a408b7a7418808ceab504b217, type: 3}
+  rightDanceSprite: {fileID: 21300000, guid: 38ab1713620221f4f98993b752b6b000, type: 3}
   leniency: 0.2
   scoreText: {fileID: 1360166079}
 --- !u!1 &1360166077
