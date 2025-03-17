@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using RhythmMicrogame;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +16,13 @@ public class RhythmInputManager : MonoBehaviour
 
     public float leniency;
 
+    public TMP_Text scoreText;
+
     private Conductor _conductor;
     private List<Note> _notes;
+
+    private int _score;
+    private int _maxScore;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +38,9 @@ public class RhythmInputManager : MonoBehaviour
             _notes[_notes.Count - 1].SetData(note);
         }
 
+        _score = 0;
+        _maxScore = _notes.Count;
+
         StartCoroutine(_conductor.Play());
     }
 
@@ -40,6 +49,8 @@ public class RhythmInputManager : MonoBehaviour
     {
         NotesUpdate();
         VisualUpdate();
+
+        scoreText.text = "Score: " + _score + "/" + _maxScore;
     }
 
     private void NotesUpdate()
@@ -62,10 +73,10 @@ public class RhythmInputManager : MonoBehaviour
                 if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) &&
                     _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-
                     Debug.Log("Hit!!");
                     Destroy(focusedNote.gameObject);
                     _notes.Remove(focusedNote);
+                    _score++;
                 }
                 break;
 
@@ -73,10 +84,10 @@ public class RhythmInputManager : MonoBehaviour
                 if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) &&
                     _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-
                     Debug.Log("Hit!!");
                     Destroy(focusedNote.gameObject);
                     _notes.Remove(focusedNote);
+                    _score++;
                 }
                 break;
 
@@ -84,10 +95,10 @@ public class RhythmInputManager : MonoBehaviour
                 if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) &&
                     _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-
                     Debug.Log("Hit!!");
                     Destroy(focusedNote.gameObject);
                     _notes.Remove(focusedNote);
+                    _score++;
                 }
                 break;
 
@@ -95,10 +106,10 @@ public class RhythmInputManager : MonoBehaviour
                 if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) &&
                     _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-
                     Debug.Log("Hit!!");
                     Destroy(focusedNote.gameObject);
                     _notes.Remove(focusedNote);
+                    _score++;
                 }
                 break;
         }
@@ -112,7 +123,7 @@ public class RhythmInputManager : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Vertical") < 0)
         {
-            playerSprite.sprite = upDanceSprite;
+            playerSprite.sprite = downDanceSprite;
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
