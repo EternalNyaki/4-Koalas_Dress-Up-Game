@@ -18,11 +18,16 @@ public class RhythmInputManager : MonoBehaviour
 
     public TMP_Text scoreText;
 
+    public AudioClip goodHitSound;
+    public AudioClip missSound;
+
     private Conductor _conductor;
     private List<Note> _notes;
 
     private int _score;
     private int _maxScore;
+
+    private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -71,46 +76,98 @@ public class RhythmInputManager : MonoBehaviour
         switch (focusedNote.data.direction)
         {
             case NoteInfo.Direction.Up:
-                if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) &&
-                    _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
+                if (_conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-                    Debug.Log("Hit!!");
-                    Destroy(focusedNote.gameObject);
-                    _notes.Remove(focusedNote);
-                    _score++;
+                    if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        Debug.Log("Miss...");
+                        _audioSource.PlayOneShot(missSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+                    }
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        Debug.Log("Hit!!");
+                        _audioSource.PlayOneShot(goodHitSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+
+                        _score++;
+                    }
                 }
                 break;
 
             case NoteInfo.Direction.Down:
-                if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) &&
-                    _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
+                if (_conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-                    Debug.Log("Hit!!");
-                    Destroy(focusedNote.gameObject);
-                    _notes.Remove(focusedNote);
-                    _score++;
+                    if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        Debug.Log("Miss...");
+                        _audioSource.PlayOneShot(missSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+                    }
+                    if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                    {
+                        Debug.Log("Hit!!");
+                        _audioSource.PlayOneShot(goodHitSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+
+                        _score++;
+                    }
                 }
                 break;
 
             case NoteInfo.Direction.Left:
-                if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) &&
-                    _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
+                if (_conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-                    Debug.Log("Hit!!");
-                    Destroy(focusedNote.gameObject);
-                    _notes.Remove(focusedNote);
-                    _score++;
+                    if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        Debug.Log("Miss...");
+                        _audioSource.PlayOneShot(missSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+                    }
+                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+                    {
+                        Debug.Log("Hit!!");
+                        _audioSource.PlayOneShot(goodHitSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+
+                        _score++;
+                    }
                 }
                 break;
 
             case NoteInfo.Direction.Right:
-                if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) &&
-                    _conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
+                if (_conductor.songPosition <= focusedNote.data.beat + leniency / song.crotchet && _conductor.songPosition >= focusedNote.data.beat - leniency / song.crotchet)
                 {
-                    Debug.Log("Hit!!");
-                    Destroy(focusedNote.gameObject);
-                    _notes.Remove(focusedNote);
-                    _score++;
+                    if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                    {
+                        Debug.Log("Miss...");
+                        _audioSource.PlayOneShot(missSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+                    }
+                    if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+                    {
+                        Debug.Log("Hit!!");
+                        _audioSource.PlayOneShot(goodHitSound);
+
+                        Destroy(focusedNote.gameObject);
+                        _notes.Remove(focusedNote);
+
+                        _score++;
+                    }
                 }
                 break;
         }
