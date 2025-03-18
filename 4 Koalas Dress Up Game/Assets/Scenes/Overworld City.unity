@@ -10948,67 +10948,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1086660514
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124291856916044268, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: m_Name
-      value: NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
-      propertyPath: dialogue
-      value: 
-      objectReference: {fileID: 4900000, guid: 844127e378c1f7c42a84c3eb8be4166d, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
 --- !u!1 &1187695830
 GameObject:
   m_ObjectHideFlags: 0
@@ -11225,6 +11164,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1502561467285869567, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502561467285869567, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502561467285869567, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76fb047c0ed345447a2f33140db6de76, type: 3}
     - target: {fileID: 6124291856916044268, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
       propertyPath: m_Name
       value: NPC-Disco
@@ -11592,10 +11543,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2617476492537452865, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
-      propertyPath: inkAsset
-      value: 
-      objectReference: {fileID: 4900000, guid: 251edd72245e2421baf80bbb8af81384, type: 3}
     - target: {fileID: 3237634545258285051, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
       propertyPath: m_Name
       value: Text Box Canvas
@@ -70164,6 +70111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 3462055018798673180, guid: c79c59f04280d4142a3e9cd71dcc542b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a3f19152e234b94ab7f2876eed7849c, type: 3}
     - target: {fileID: 5499356545275823922, guid: c79c59f04280d4142a3e9cd71dcc542b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -70293,7 +70244,6 @@ SceneRoots:
   - {fileID: 399508125142998208}
   - {fileID: 773326274}
   - {fileID: 2053238722}
-  - {fileID: 1086660514}
   - {fileID: 1723691012}
   - {fileID: 1908995035}
   - {fileID: 5363204765540099425}

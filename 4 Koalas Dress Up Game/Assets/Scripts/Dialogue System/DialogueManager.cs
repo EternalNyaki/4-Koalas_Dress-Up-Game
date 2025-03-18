@@ -111,7 +111,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
-        if (story.currentTags.Contains("casual") && !PlayerManager.Instance.IsWearingCasualOutfit())
+        else if (story.currentTags.Contains("casual") && !PlayerManager.Instance.IsWearingCasualOutfit())
         {
             if (story.canContinue)
             {
@@ -123,7 +123,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
-        if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        else if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
             TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameStart);
 

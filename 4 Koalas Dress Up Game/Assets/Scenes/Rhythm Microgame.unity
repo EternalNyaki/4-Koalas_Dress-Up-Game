@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 1972019732}
-  song: {fileID: 11400000, guid: 8557e5ab704c52b4eb080e9b8771523d, type: 2}
+  song: {fileID: 11400000, guid: 96af176b77ff222469db30664057e6e0, type: 2}
   notePrefab: {fileID: 3644968423853663858, guid: 60c02f56fa3c96c409fab058d416dba7, type: 3}
   defaultSprite: {fileID: 21300000, guid: c18073f87a53f1f4583f6528dd39cbfe, type: 3}
   upDanceSprite: {fileID: 21300000, guid: d1ad9a2d23b6d8c4ea3fdcfd6ffe480b, type: 3}
@@ -526,6 +526,9 @@ MonoBehaviour:
   rightDanceSprite: {fileID: 21300000, guid: 38ab1713620221f4f98993b752b6b000, type: 3}
   leniency: 0.2
   scoreText: {fileID: 1360166079}
+  goodHitSound: {fileID: 8300000, guid: d69949bd002dc684ea70f864ec8fa3db, type: 3}
+  missSound: {fileID: 8300000, guid: 7b32f8a02cb527642926411d51de09ad, type: 3}
+  audioSource: {fileID: 366039844}
 --- !u!1 &1360166077
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,8 +844,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1248753886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15, y: 0}
-  m_AnchorMax: {x: 0.3, y: 1}
+  m_AnchorMin: {x: 0.2, y: 0}
+  m_AnchorMax: {x: 0.35, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
