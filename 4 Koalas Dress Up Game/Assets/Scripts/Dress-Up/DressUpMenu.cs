@@ -97,6 +97,11 @@ public class DressUpMenu : MonoBehaviour
             ConfirmSelection();
             _audioSource.PlayOneShot(selectSound);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerManager.Instance.SetScene("Overworld City");
+        }
     }
 
     //Shift Selection method
