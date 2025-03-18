@@ -101,6 +101,22 @@ public class PlayerManager : Singleton<PlayerManager>
         OnOutfitChanged(item.type);
     }
 
+    public bool IsWearingDiscoOutfit()
+    {
+        return hat.name == "Afro" &&
+               shirt.name == "DiscoShirt" &&
+               pants.name == "DiscoPants" &&
+               shoes.name == "DiscoShoes";
+    }
+
+    public bool IsWearingCasualOutfit()
+    {
+        return hat.name == "TestHat" &&
+               shirt.name == "TestShirt" &&
+               pants.name == "TestPants" &&
+               shoes.name == "TestShoes";
+    }
+
     public void SetDiscoScore(int score, int maxScore)
     {
         discoScore = score;

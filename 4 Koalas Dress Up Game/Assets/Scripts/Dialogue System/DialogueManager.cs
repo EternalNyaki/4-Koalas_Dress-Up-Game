@@ -98,5 +98,18 @@ public class DialogueManager : Singleton<DialogueManager>
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
+
+        if (story.currentTags.Contains("DiscoOutfit") && !PlayerManager.Instance.IsWearingDiscoOutfit())
+        {
+            story.Continue();
+        }
+        if (story.currentTags.Contains("CasualOutfit") && !PlayerManager.Instance.IsWearingCasualOutfit())
+        {
+            story.Continue();
+        }
+        if (story.currentTags.Contains("StartRhythmMicrogame") && Input.GetKeyDown(KeyCode.Z))
+        {
+            PlayerManager.Instance.SetScene("Rhythm Microgame");
+        }
     }
 }
