@@ -125,6 +125,8 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         if (story.currentTags.Contains("Start Rhythm Microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
+            TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameStart);
+
             PlayerManager.Instance.SetScene("Rhythm Microgame");
         }
     }

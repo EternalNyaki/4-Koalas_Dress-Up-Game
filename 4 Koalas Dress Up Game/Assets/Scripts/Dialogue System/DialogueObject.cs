@@ -11,6 +11,8 @@ public class DialogueObject : InteractableObject
 
     public override void Interact()
     {
+        TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.Interaction);
+
         DialogueManager.Instance.SetStory(dialogue);
         PauseModeManager.Instance.SetPauseMode(PauseMode.Dialogue);
     }
