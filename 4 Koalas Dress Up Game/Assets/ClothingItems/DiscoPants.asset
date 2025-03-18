@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DiscoPants
   m_EditorClassIdentifier: 
   type: 2
-  sprite: {fileID: 21300000, guid: 8383938265b89504baac259ef43b27fb, type: 3}
+  sprite: {fileID: 21300000, guid: 64ae492ac8d5e074294f187230f5e8dc, type: 3}
   icon: {fileID: 21300000, guid: 8383938265b89504baac259ef43b27fb, type: 3}
