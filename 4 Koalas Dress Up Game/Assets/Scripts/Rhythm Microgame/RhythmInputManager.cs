@@ -21,13 +21,13 @@ public class RhythmInputManager : MonoBehaviour
     public AudioClip goodHitSound;
     public AudioClip missSound;
 
+    public AudioSource audioSource;
+
     private Conductor _conductor;
     private List<Note> _notes;
 
     private int _score;
     private int _maxScore;
-
-    private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +81,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         Debug.Log("Miss...");
-                        _audioSource.PlayOneShot(missSound);
+                        audioSource.PlayOneShot(missSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -89,7 +89,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
                     {
                         Debug.Log("Hit!!");
-                        _audioSource.PlayOneShot(goodHitSound);
+                        audioSource.PlayOneShot(goodHitSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -105,7 +105,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         Debug.Log("Miss...");
-                        _audioSource.PlayOneShot(missSound);
+                        audioSource.PlayOneShot(missSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -113,7 +113,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                     {
                         Debug.Log("Hit!!");
-                        _audioSource.PlayOneShot(goodHitSound);
+                        audioSource.PlayOneShot(goodHitSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -129,7 +129,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         Debug.Log("Miss...");
-                        _audioSource.PlayOneShot(missSound);
+                        audioSource.PlayOneShot(missSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -137,7 +137,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                     {
                         Debug.Log("Hit!!");
-                        _audioSource.PlayOneShot(goodHitSound);
+                        audioSource.PlayOneShot(goodHitSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -153,7 +153,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
                     {
                         Debug.Log("Miss...");
-                        _audioSource.PlayOneShot(missSound);
+                        audioSource.PlayOneShot(missSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);
@@ -161,7 +161,7 @@ public class RhythmInputManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                     {
                         Debug.Log("Hit!!");
-                        _audioSource.PlayOneShot(goodHitSound);
+                        audioSource.PlayOneShot(goodHitSound);
 
                         Destroy(focusedNote.gameObject);
                         _notes.Remove(focusedNote);

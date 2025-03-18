@@ -17,4 +17,28 @@ MonoBehaviour:
   countIn: 4
   duration: 26.916
   audio: {fileID: 8300000, guid: 20425398f7172ce4b99dae2087f3457a, type: 3}
-  chartInfo: []
+  chartInfo:
+  - direction: 0
+    beat: 11
+  - direction: 1
+    beat: 15
+  - direction: 2
+    beat: 19
+  - direction: 3
+    beat: 23
+  - direction: 1
+    beat: 25
+  - direction: 2
+    beat: 27
+  - direction: 0
+    beat: 29
+  - direction: 3
+    beat: 31
+  - direction: 1
+    beat: 33
+  - direction: 1
+    beat: 35
+  - direction: 3
+    beat: 37
+  - direction: 3
+    beat: 39
