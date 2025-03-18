@@ -6328,6 +6328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-StillTaxiDriver
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 58e60f922c99f4a569f453fefcb9fd67, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11225,6 +11229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-Disco
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 48c9aee667ab04a6a9c9454fb4b976f3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11555,7 +11563,7 @@ PrefabInstance:
     - target: {fileID: 2617476492537452865, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
       propertyPath: inkAsset
       value: 
-      objectReference: {fileID: 4900000, guid: 6b430b6fcfea20a43bf0e9945ecf8e02, type: 3}
+      objectReference: {fileID: 4900000, guid: 251edd72245e2421baf80bbb8af81384, type: 3}
     - target: {fileID: 3237634545258285051, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
       propertyPath: m_Name
       value: Text Box Canvas
