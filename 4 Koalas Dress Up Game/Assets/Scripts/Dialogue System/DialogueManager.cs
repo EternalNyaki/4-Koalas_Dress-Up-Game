@@ -49,7 +49,7 @@ public class DialogueManager : Singleton<DialogueManager>
         if (story.canContinue)
         {
             //Play next line of dialogue on interaction
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 _audioSource.PlayOneShot(interactSound);
                 mainText.text = story.Continue();
@@ -81,7 +81,7 @@ public class DialogueManager : Singleton<DialogueManager>
             }
 
             //Select dialogue option on interaction
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 _audioSource.PlayOneShot(interactSound);
                 story.ChooseChoiceIndex(_selectedChoice);
@@ -91,7 +91,7 @@ public class DialogueManager : Singleton<DialogueManager>
         else
         {
             //If there is no more dialogue, resume game on interaction
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 _audioSource.PlayOneShot(interactSound);
                 story.ResetState();
@@ -107,7 +107,7 @@ public class DialogueManager : Singleton<DialogueManager>
         {
             story.Continue();
         }
-        if (story.currentTags.Contains("StartRhythmMicrogame") && Input.GetKeyDown(KeyCode.Z))
+        if (story.currentTags.Contains("StartRhythmMicrogame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
             PlayerManager.Instance.SetScene("Rhythm Microgame");
         }
