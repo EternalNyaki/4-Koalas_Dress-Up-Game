@@ -99,15 +99,31 @@ public class DialogueManager : Singleton<DialogueManager>
             }
         }
 
-        if (story.currentTags.Contains("DiscoOutfit") && !PlayerManager.Instance.IsWearingDiscoOutfit())
+        if (story.currentTags.Contains("Disco Outfit") && !PlayerManager.Instance.IsWearingDiscoOutfit())
         {
-            story.Continue();
+            if (story.canContinue)
+            {
+                mainText.text = story.Continue();
+            }
+            else
+            {
+                story.ResetState();
+                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+            }
         }
-        if (story.currentTags.Contains("CasualOutfit") && !PlayerManager.Instance.IsWearingCasualOutfit())
+        if (story.currentTags.Contains("Casual Outfit") && !PlayerManager.Instance.IsWearingCasualOutfit())
         {
-            story.Continue();
+            if (story.canContinue)
+            {
+                mainText.text = story.Continue();
+            }
+            else
+            {
+                story.ResetState();
+                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+            }
         }
-        if (story.currentTags.Contains("StartRhythmMicrogame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        if (story.currentTags.Contains("Start Rhythm Microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
             PlayerManager.Instance.SetScene("Rhythm Microgame");
         }
