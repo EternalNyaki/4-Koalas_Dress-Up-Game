@@ -7119,17 +7119,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2617476492537452865, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
-      propertyPath: inkAsset
-      value: 
-      objectReference: {fileID: 4900000, guid: 6b430b6fcfea20a43bf0e9945ecf8e02, type: 3}
     - target: {fileID: 3237634545258285051, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
       propertyPath: m_Name
       value: Text Box Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3237634545258285051, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5540176688537804870, guid: 9902041d59fc02248b24b22a1a7eb817, type: 3}
       propertyPath: m_Pivot.x
