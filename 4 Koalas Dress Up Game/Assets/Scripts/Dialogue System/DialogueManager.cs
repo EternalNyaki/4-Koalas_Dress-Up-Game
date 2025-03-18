@@ -99,7 +99,7 @@ public class DialogueManager : Singleton<DialogueManager>
             }
         }
 
-        if (story.currentTags.Contains("Disco Outfit") && !PlayerManager.Instance.IsWearingDiscoOutfit())
+        if (story.currentTags.Contains("disco") && !PlayerManager.Instance.IsWearingDiscoOutfit())
         {
             if (story.canContinue)
             {
@@ -111,7 +111,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
-        if (story.currentTags.Contains("Casual Outfit") && !PlayerManager.Instance.IsWearingCasualOutfit())
+        if (story.currentTags.Contains("casual") && !PlayerManager.Instance.IsWearingCasualOutfit())
         {
             if (story.canContinue)
             {
@@ -123,7 +123,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
-        if (story.currentTags.Contains("Start Rhythm Microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
             TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameStart);
 
