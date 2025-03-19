@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class TelemetryLogManager : Singleton<TelemetryLogManager>
@@ -15,13 +17,28 @@ public class TelemetryLogManager : Singleton<TelemetryLogManager>
     private float _gameStartTime;
     private int _microgameAttempts = 0;
 
+    private KeyCode[] _allKeyCodesArray;
+
     protected override void Initialize()
     {
+        _allKeyCodesArray = (KeyCode[])Enum.GetValues(typeof(KeyCode));
+
         base.Initialize();
 
         DontDestroyOnLoad(gameObject);
 
         _gameStartTime = Time.time;
+    }
+
+    void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            foreach (KeyCode k in _allKeyCodesArray)
+            {
+                if (Input.GetKeyDown(k)) { LogPlayerInput(this, k.ToString()); }
+            }
+        }
     }
 
     public void LogEvent(Component sender, EventType eventType)
@@ -63,7 +80,24 @@ public class TelemetryLogManager : Singleton<TelemetryLogManager>
 
     public void LogPlayerPosition(Component sender, Vector2 position)
     {
-        TelemetryLogger.Log(sender, "Player Position", position);
+        PlayerPositionData pData = new PlayerPositionData()
+        {
+            gameTime = Time.time - _gameStartTime,
+            position = position
+        };
+
+        TelemetryLogger.Log(sender, "Player Position", pData);
+    }
+
+    public void LogPlayerInput(Component sender, string keyName)
+    {
+        PlayerInputData iData = new PlayerInputData()
+        {
+            gameTime = Time.time - _gameStartTime,
+            keyName = keyName
+        };
+
+        TelemetryLogger.Log(sender, "Player Input", iData);
     }
 
     [Serializable]
@@ -86,5 +120,17 @@ public class TelemetryLogManager : Singleton<TelemetryLogManager>
         public float gameTime;
         public bool success;
         public int score;
+    }
+
+    private struct PlayerPositionData
+    {
+        public float gameTime;
+        public Vector2 position;
+    }
+
+    private struct PlayerInputData
+    {
+        public float gameTime;
+        public string keyName;
     }
 }
