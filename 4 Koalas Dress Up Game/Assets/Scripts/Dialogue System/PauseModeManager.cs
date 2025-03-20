@@ -7,7 +7,8 @@ using UnityEngine;
 public enum PauseMode
 {
     Unpaused,
-    Dialogue
+    Dialogue,
+    QuitMenu
 }
 
 //Pause Mode Manager
@@ -19,6 +20,8 @@ public class PauseModeManager : Singleton<PauseModeManager>
 
     //Canvas holding the dialogue box
     public GameObject textBox;
+    //Canvas holding the quit menu
+    public GameObject quitMenu;
     //Reference to the script controlling the player's movement
     public RPGMovement playerMovement;
 
@@ -39,7 +42,8 @@ public class PauseModeManager : Singleton<PauseModeManager>
         switch (mode)
         {
             case PauseMode.Unpaused:
-                textBox.gameObject.SetActive(false);
+                quitMenu.SetActive(false);
+                textBox.SetActive(false);
 
                 playerMovement.enabled = true;
 
@@ -50,7 +54,20 @@ public class PauseModeManager : Singleton<PauseModeManager>
                 break;
 
             case PauseMode.Dialogue:
-                textBox.gameObject.SetActive(true);
+                quitMenu.SetActive(false);
+                textBox.SetActive(true);
+
+                playerMovement.enabled = false;
+
+                foreach (var v in FindObjectsOfType<InteractableObject>())
+                {
+                    v.enabled = false;
+                }
+                break;
+
+            case PauseMode.QuitMenu:
+                quitMenu.SetActive(true);
+                textBox.SetActive(false);
 
                 playerMovement.enabled = false;
 
@@ -62,5 +79,10 @@ public class PauseModeManager : Singleton<PauseModeManager>
         }
 
         pauseMode = mode;
+    }
+
+    public void SetPauseMode(int pauseMode)
+    {
+        SetPauseMode((PauseMode)pauseMode);
     }
 }

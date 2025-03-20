@@ -40,6 +40,11 @@ public class PlayerController : RPGMovement
             StartCoroutine(LoadDelay(0.5f, 1));
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseModeManager.Instance.SetPauseMode(PauseMode.QuitMenu);
+        }
+
         _positionLogTimer += Time.deltaTime;
     }
 
