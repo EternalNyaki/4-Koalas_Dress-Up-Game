@@ -41,6 +41,17 @@ public class TelemetryLogManager : Singleton<TelemetryLogManager>
         }
     }
 
+    public void GameStart()
+    {
+        TelemetryLogger.Log(this, "Game Started");
+        _gameStartTime = Time.time;
+    }
+
+    public void GameEnd()
+    {
+        TelemetryLogger.Log(this, "Game Ended");
+    }
+
     public void LogEvent(Component sender, EventType eventType)
     {
         switch (eventType)
