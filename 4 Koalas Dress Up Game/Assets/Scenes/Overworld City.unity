@@ -11891,6 +11891,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 76fb047c0ed345447a2f33140db6de76, type: 3}
+    - target: {fileID: 3070078755538284187, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070078755538284187, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6124291856916044268, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
       propertyPath: m_Name
       value: NPC-Disco
@@ -71086,6 +71094,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c79c59f04280d4142a3e9cd71dcc542b, type: 3}
+--- !u!1001 &2178829190193928645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 51.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.09857454
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236402455255143419, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543270130423070797, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
+      propertyPath: m_Name
+      value: NPC Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0e78cbf952cf2264aab65722e8a3ff10, type: 3}
 --- !u!1001 &5363204765540099425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71194,3 +71259,4 @@ SceneRoots:
   - {fileID: 2019281648}
   - {fileID: 86195238}
   - {fileID: 1693028094}
+  - {fileID: 2178829190193928645}

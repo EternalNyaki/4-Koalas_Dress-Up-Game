@@ -133,12 +133,14 @@ public class TelemetryLogManager : Singleton<TelemetryLogManager>
         public int score;
     }
 
+    [Serializable]
     private struct PlayerPositionData
     {
         public float gameTime;
         public Vector2 position;
     }
 
+    [Serializable]
     private struct PlayerInputData
     {
         public float gameTime;

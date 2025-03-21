@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061297ba5840ade46a1121f308792188, type: 3}
+  m_Name: MovingNPCAnimations
+  m_EditorClassIdentifier: 
+  up:
+  - {fileID: 7400000, guid: 7f6a8f7234b0845438d4c4a496145090, type: 2}
+  down:
+  - {fileID: 7400000, guid: 571ef2475b922064e986d363a571edac, type: 2}
+  left:
+  - {fileID: 7400000, guid: 391d9cd17c630d64a8c7cb4a3af4bc1a, type: 2}
+  right:
+  - {fileID: 7400000, guid: 10abb7d0a7eb23645b7f3ffc4987999c, type: 2}
