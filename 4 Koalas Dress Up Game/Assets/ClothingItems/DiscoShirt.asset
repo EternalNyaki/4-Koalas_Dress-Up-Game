@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DiscoShirt
   m_EditorClassIdentifier: 
   type: 1
-  sprite: {fileID: 21300000, guid: 73491f10596adec489e1367a849005f5, type: 3}
+  sprite: {fileID: 21300000, guid: 40aaf529c0169594fb412d1b39abd42e, type: 3}
+  icon: {fileID: 21300000, guid: 73491f10596adec489e1367a849005f5, type: 3}

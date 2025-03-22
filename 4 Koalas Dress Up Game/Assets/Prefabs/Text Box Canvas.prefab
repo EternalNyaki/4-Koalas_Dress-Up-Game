@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98009cd91ec9fa241b605392f065b2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 0}
+  inkAsset: {fileID: 4900000, guid: 251edd72245e2421baf80bbb8af81384, type: 3}
   mainText: {fileID: 9134647169149673158}
+  interactSound: {fileID: 8300000, guid: 40e14b39259d58e41839164c876ff081, type: 3}
 --- !u!82 &148950567563914192
 AudioSource:
   m_ObjectHideFlags: 0

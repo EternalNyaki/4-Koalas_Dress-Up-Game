@@ -16,4 +16,5 @@ public class ClothingItem : ScriptableObject
 {
     public ClothingType type;
     public Sprite sprite;
+    public Sprite icon;
 }

@@ -92,10 +92,15 @@ public class DressUpMenu : MonoBehaviour
             ShiftSelection(Direction.Down);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
             ConfirmSelection();
             _audioSource.PlayOneShot(selectSound);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerManager.Instance.SetScene("Overworld City");
         }
     }
 

@@ -49,7 +49,7 @@ public class DialogueManager : Singleton<DialogueManager>
         if (story.canContinue)
         {
             //Play next line of dialogue on interaction
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 _audioSource.PlayOneShot(interactSound);
                 mainText.text = story.Continue();
@@ -81,7 +81,7 @@ public class DialogueManager : Singleton<DialogueManager>
             }
 
             //Select dialogue option on interaction
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 _audioSource.PlayOneShot(interactSound);
                 story.ChooseChoiceIndex(_selectedChoice);
@@ -91,12 +91,41 @@ public class DialogueManager : Singleton<DialogueManager>
         else
         {
             //If there is no more dialogue, resume game on interaction
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
                 _audioSource.PlayOneShot(interactSound);
                 story.ResetState();
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
+        }
+
+        if (story.currentTags.Contains("disco") && !PlayerManager.Instance.IsWearingDiscoOutfit())
+        {
+            if (story.canContinue)
+            {
+                mainText.text = story.Continue();
+            }
+            else
+            {
+                story.ResetState();
+                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+            }
+        }
+        else if (story.currentTags.Contains("casual") && !PlayerManager.Instance.IsWearingCasualOutfit())
+        {
+            if (story.canContinue)
+            {
+                mainText.text = story.Continue();
+            }
+            else
+            {
+                story.ResetState();
+                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+            }
+        }
+        else if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        {
+            PlayerManager.Instance.SetScene("Rhythm Microgame");
         }
     }
 }

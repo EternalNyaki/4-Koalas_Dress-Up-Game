@@ -26,7 +26,7 @@ public class DressUpItem : MonoBehaviour
         if (data == null || image == null) { return; }
 
         //Set the menu sprite to the sprite for the associated clothing item
-        image.sprite = data.sprite;
+        image.sprite = data.icon;
     }
 #endif
 }

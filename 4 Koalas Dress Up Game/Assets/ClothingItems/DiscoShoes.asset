@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DiscoShoes
   m_EditorClassIdentifier: 
   type: 3
-  sprite: {fileID: 21300000, guid: c5c73ab421ecb5c48843b976512f5847, type: 3}
+  sprite: {fileID: 21300000, guid: c797db9ec6a80ba438f92bddc452fa51, type: 3}
+  icon: {fileID: 21300000, guid: c5c73ab421ecb5c48843b976512f5847, type: 3}

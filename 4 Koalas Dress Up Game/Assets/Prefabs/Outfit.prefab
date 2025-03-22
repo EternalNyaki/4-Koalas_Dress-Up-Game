@@ -55,15 +55,15 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 50
-    m_Bottom: 50
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 50
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!1001 &5401320272219970328
@@ -104,11 +104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_LocalPosition.x
@@ -158,6 +158,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560894037325464047, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5c73ab421ecb5c48843b976512f5847, type: 3}
+    - target: {fileID: 7158159178556175220, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 6247284cc1f65f64489f2aa302b7761f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -206,11 +214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_LocalPosition.x
@@ -260,6 +268,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560894037325464047, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 73491f10596adec489e1367a849005f5, type: 3}
+    - target: {fileID: 7158159178556175220, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bc35b9c7a1224f449800da5fffbc091, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -308,11 +324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_LocalPosition.x
@@ -362,6 +378,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6560894037325464047, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8383938265b89504baac259ef43b27fb, type: 3}
+    - target: {fileID: 7158159178556175220, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: a19f2cbe48b1eab46b95e2810a7b52ed, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -410,11 +434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2650825110684346663, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
       propertyPath: m_LocalPosition.x
@@ -464,6 +488,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6131567016443386430, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560894037325464047, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560894037325464047, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 77d86bd475b36e247b288baf1305ee79, type: 3}
+    - target: {fileID: 6560894037325464047, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7158159178556175220, guid: 7e01f1149a08c8849a2f923a92a35204, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 77cd6d112e2196b45bea78b21c6cc424, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

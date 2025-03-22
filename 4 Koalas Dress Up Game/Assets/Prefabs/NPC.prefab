@@ -319,7 +319,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -443,5 +443,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c650dcc33fa924982e7fa38cb066af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactSound: {fileID: 0}
-  dialogue: {fileID: 0}
+  interactSound: {fileID: 8300000, guid: 40e14b39259d58e41839164c876ff081, type: 3}
+  dialogue: {fileID: 4900000, guid: 844127e378c1f7c42a84c3eb8be4166d, type: 3}

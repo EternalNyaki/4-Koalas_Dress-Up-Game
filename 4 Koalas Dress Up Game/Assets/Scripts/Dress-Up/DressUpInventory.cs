@@ -15,15 +15,4 @@ public class DressUpInventory : MonoBehaviour
 
         foreach (ClothingItem item in startingItems) { _clothingInventory.Add(item); }
     }
-
-    public void AddItem(ClothingItem item)
-    {
-        if (_clothingInventory.Contains(item))
-        {
-            Debug.LogWarning($"Player already owns {item.name}");
-            return;
-        }
-
-        _clothingInventory.Add(item);
-    }
 }
