@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-NPCOverlookingWaterFront
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 098ae635855064f07b70cfbf34864f9d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1153,6 +1157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-EmpireStateBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: af0cacf486602474eb6a4d6df11f86ac, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6656,7 +6664,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 101.5
+  m_fontSize: 47.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11030,6 +11038,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-GroupChar1
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 357192efe2995441da8202d2e2ca277c, type: 3}
+    - target: {fileID: 8562370243625552139, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_Size.x
+      value: 3.0881863
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562370243625552139, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3762417
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562370243625552139, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.90362453
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562370243625552139, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.43812084
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11228,6 +11256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-PidgeonEncounter
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 10dbb7b1d84ac4dcdb208f718879fbc2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11479,7 +11511,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 101.5
+  m_fontSize: 47.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11781,7 +11813,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135.3
+  m_fontSize: 63.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12221,6 +12253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC-Brooklyn Bridge
       objectReference: {fileID: 0}
+    - target: {fileID: 7368361776927920403, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 4900000, guid: 3703ab5159b62426ba464bbed368664c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
