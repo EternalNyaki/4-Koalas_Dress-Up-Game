@@ -309,11 +309,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.15928
+      value: 25.347
       objectReference: {fileID: 0}
     - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.435947
+      value: 62.352
       objectReference: {fileID: 0}
     - target: {fileID: 433217353179344572, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1502561467285869567, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9454712d3d681994595483ee9bc35141, type: 3}
     - target: {fileID: 6124291856916044268, guid: b98bb70ba8010a04eaa98c015d25afe5, type: 3}
       propertyPath: m_Name
       value: NPC-NPCOverlookingWaterFront
