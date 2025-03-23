@@ -37,7 +37,7 @@ public class PlayerController : RPGMovement
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //HACK: This is a really dumb stupid way of doing this and it sucks (also repeated code)
-            StartCoroutine(LoadDelay(0.5f, 1));
+            PlayerManager.Instance.SetScene("Dress-Up Menu");
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

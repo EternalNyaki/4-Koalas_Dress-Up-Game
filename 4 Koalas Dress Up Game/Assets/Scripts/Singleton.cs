@@ -33,7 +33,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
         }
         else if (_instance != this)
         {
-            Debug.LogError($"Cannot have multiple {this.GetType().Name} objects in one scene.");
+            Debug.LogWarning($"Cannot have multiple {this.GetType().Name} objects in one scene.");
             Destroy(this);
         }
     }
