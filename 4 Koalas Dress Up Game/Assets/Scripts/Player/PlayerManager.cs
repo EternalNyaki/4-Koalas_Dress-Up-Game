@@ -26,6 +26,8 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public AudioClip exitSound;
 
+    private Vector2 _savedPosition = new(0f, 0f);
+
     private AudioSource _audioSource;
 
 #if UNITY_EDITOR
@@ -131,6 +133,10 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public void SetScene(string sceneName)
     {
+        if (SceneManager.GetActiveScene().name == "Overworld City")
+        {
+            _savedPosition = FindObjectOfType<PlayerController>().transform.position;
+        }
         //HACK: This is a really dumb stupid way of doing this and it sucks
         StartCoroutine(LoadDelay(0.5f, sceneName));
     }
@@ -140,5 +146,13 @@ public class PlayerManager : Singleton<PlayerManager>
         _audioSource.PlayOneShot(exitSound);
         yield return new WaitForSeconds(delayTime);
         SceneManager.LoadScene(sceneName);
+
+        if (sceneName == "Overworld City")
+        {
+            yield return new WaitUntil(() => SceneManager.GetActiveScene().name == sceneName);
+
+            FindObjectOfType<PlayerController>().transform.position = _savedPosition;
+            FindObjectOfType<FollowCamera>().transform.position = (Vector3)_savedPosition + new Vector3(0f, 0f, -10f);
+        }
     }
 }

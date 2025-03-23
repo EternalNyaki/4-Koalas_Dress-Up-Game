@@ -5,27 +5,47 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : RPGMovement
 {
+
     public AudioClip exitSound;
 
+    public float positionLogInterval = 1f;
+
     private AudioSource _audioSource;
+
+    private float _positionLogTimer;
 
     protected override void Initialize()
     {
         base.Initialize();
 
         _audioSource = GetComponent<AudioSource>();
+
+        _positionLogTimer = 0f;
     }
 
     protected override void GetInputs()
     {
         base.GetInputs();
 
-        //HACK: Temporary method to switch scenes for milestone #1, will change later
+        if (_positionLogTimer > positionLogInterval)
+        {
+            TelemetryLogManager.Instance.LogPlayerPosition(this, transform.position);
+
+            _positionLogTimer -= positionLogInterval;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //HACK: This is a really dumb stupid way of doing this and it sucks (also repeated code)
-            StartCoroutine(LoadDelay(0.5f, 1));
+            PlayerManager.Instance.SetScene("Dress-Up Menu");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseModeManager.Instance.SetPauseMode(PauseMode.QuitMenu);
+        }
+
+        _positionLogTimer += Time.deltaTime;
     }
 
     private IEnumerator LoadDelay(float delayTime, int sceneID)

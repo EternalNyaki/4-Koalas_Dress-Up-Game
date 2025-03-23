@@ -9,6 +9,9 @@ public abstract class InteractableObject : MonoBehaviour
     //Interaction initiated sound
     public AudioClip interactSound;
 
+    //Sprite used in indicate that the player can interact with this object
+    public SpriteRenderer interactionIndicator;
+
     //Audio component for interaction sound
     private AudioSource _audioSource;
 
@@ -40,6 +43,11 @@ public abstract class InteractableObject : MonoBehaviour
     {
         //If the triggering collider is a player, get a reference to it
         _player = collision.gameObject.GetComponent<PlayerController>();
+
+        if (_player != null)
+        {
+            interactionIndicator.color = new(255f, 255f, 255f, 255f);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,6 +55,11 @@ public abstract class InteractableObject : MonoBehaviour
         //Clear the player reference
         if (_player.gameObject == collision.gameObject)
         {
+            if (_player != null)
+            {
+                interactionIndicator.color = new(255f, 255f, 255f, 175f);
+            }
+
             _player = null;
         }
     }

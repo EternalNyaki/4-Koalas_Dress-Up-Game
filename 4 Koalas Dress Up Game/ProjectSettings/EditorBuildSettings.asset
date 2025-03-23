@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 9ffbf9789b829f644ae07fb40a7a019f
+  - enabled: 1
     path: Assets/Scenes/Overworld City.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rhythm Microgame Results.unity
     guid: b4b77b749eeba204b9d79d1d586fe6d8
+  - enabled: 1
+    path: Assets/Scenes/Quit.unity
+    guid: 7af462977584d0d4fa089dbd68b66182
   m_configObjects: {}
