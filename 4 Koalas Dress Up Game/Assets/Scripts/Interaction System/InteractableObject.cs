@@ -41,10 +41,11 @@ public abstract class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log($"I am {transform.parent.gameObject.name}, collision is {collision.gameObject.name}");
         //If the triggering collider is a player, get a reference to it
         _player = collision.gameObject.GetComponent<PlayerController>();
 
-        if (_player != null)
+        if (_player != null && interactionIndicator != null)
         {
             interactionIndicator.color = new(255f, 255f, 255f, 255f);
         }
@@ -53,9 +54,9 @@ public abstract class InteractableObject : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //Clear the player reference
-        if (_player.gameObject == collision.gameObject)
+        if (_player?.gameObject == collision.gameObject)
         {
-            if (_player != null)
+            if (_player != null && interactionIndicator != null)
             {
                 interactionIndicator.color = new(255f, 255f, 255f, 175f);
             }

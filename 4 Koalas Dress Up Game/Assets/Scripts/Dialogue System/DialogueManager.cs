@@ -34,11 +34,19 @@ public class DialogueManager : Singleton<DialogueManager>
         SetStory(inkAsset);
     }
 
+    /// <summary>
+    /// Reset the current Ink story and set the given Ink JSON asset as the current story
+    /// </summary>
+    /// <param name="inkStory"></param>
     public void SetStory(TextAsset inkStory)
     {
+        story?.ResetState();
+
         //Load story object
         story = new Story(inkStory.text);
         mainText.text = story.Continue();
+
+        Debug.Log(inkStory.name);
     }
 
     // Update is called once per frame
@@ -51,8 +59,7 @@ public class DialogueManager : Singleton<DialogueManager>
             //Play next line of dialogue on interaction
             if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
-                _audioSource.PlayOneShot(interactSound);
-                mainText.text = story.Continue();
+                LoadNextDialogue();
             }
         }
         else if (story.currentChoices.Count > 0)
@@ -83,9 +90,8 @@ public class DialogueManager : Singleton<DialogueManager>
             //Select dialogue option on interaction
             if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
-                _audioSource.PlayOneShot(interactSound);
                 story.ChooseChoiceIndex(_selectedChoice);
-                mainText.text = story.Continue();
+                LoadNextDialogue();
             }
         }
         else
@@ -93,41 +99,62 @@ public class DialogueManager : Singleton<DialogueManager>
             //If there is no more dialogue, resume game on interaction
             if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
             {
-                _audioSource.PlayOneShot(interactSound);
-                story.ResetState();
-                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+                ResetStory();
             }
         }
 
+        //Tags-based logic
         if (story.currentTags.Contains("disco") && !PlayerManager.Instance.IsWearingDiscoOutfit())
         {
+            //#disco tag logic
             if (story.canContinue)
             {
-                mainText.text = story.Continue();
+                LoadNextDialogue(false);
             }
             else
             {
-                story.ResetState();
-                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+                ResetStory(false);
             }
         }
         else if (story.currentTags.Contains("casual") && !PlayerManager.Instance.IsWearingCasualOutfit())
         {
+            //#casual tag logic
             if (story.canContinue)
             {
-                mainText.text = story.Continue();
+                LoadNextDialogue(false);
             }
             else
             {
-                story.ResetState();
-                PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+                ResetStory(false);
             }
         }
         else if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
+            //#microgame tag logic
             TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameStart);
 
             PlayerManager.Instance.SetScene("Rhythm Microgame");
         }
+    }
+
+    public void LoadNextDialogue(bool playSound = true)
+    {
+        if (playSound) { _audioSource.PlayOneShot(interactSound); }
+
+        mainText.text = story.Continue();
+
+        Debug.Log("Dialogue continued");
+    }
+
+    public void ResetStory(bool playSound = true)
+    {
+        if (playSound) { _audioSource.PlayOneShot(interactSound); }
+
+        story.ResetState();
+        story = null;
+
+        PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
+
+        Debug.Log("Dialogue reset");
     }
 }

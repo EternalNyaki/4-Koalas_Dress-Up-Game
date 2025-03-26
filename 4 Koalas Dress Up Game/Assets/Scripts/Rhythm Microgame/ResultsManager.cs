@@ -11,15 +11,15 @@ public class ResultsManager : MonoBehaviour
     void Start()
     {
         scoreText.text = "Score: " + PlayerManager.Instance.discoScore + " / " + PlayerManager.Instance.discoMaxScore;
-        if (PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore < 0.5f)
+        if ((float)PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore < 0.5f)
         {
             resultsText.text = "Better luck next time...";
         }
-        else if (PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore < 0.75f)
+        else if ((float)PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore < 0.75f)
         {
             resultsText.text = "Success!";
         }
-        else if (PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore < 0.9f)
+        else if ((float)PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore < 0.9f)
         {
             resultsText.text = "Groovy!!";
         }

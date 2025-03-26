@@ -80,7 +80,7 @@ public class TelemetryLogManager : Singleton<TelemetryLogManager>
                 MicrogameCompleteData mcData = new MicrogameCompleteData()
                 {
                     gameTime = Time.time - _gameStartTime,
-                    success = PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore >= 0.5f,
+                    success = (float)PlayerManager.Instance.discoScore / PlayerManager.Instance.discoMaxScore >= 0.5f,
                     score = PlayerManager.Instance.discoScore
                 };
 

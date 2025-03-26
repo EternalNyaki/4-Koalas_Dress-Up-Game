@@ -155,4 +155,9 @@ public class PlayerManager : Singleton<PlayerManager>
             FindObjectOfType<FollowCamera>().transform.position = (Vector3)_savedPosition + new Vector3(0f, 0f, -10f);
         }
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

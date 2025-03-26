@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: MovingNPCAnimations
   m_EditorClassIdentifier: 
   up:
-  - {fileID: 7400000, guid: 7f6a8f7234b0845438d4c4a496145090, type: 2}
+  - {fileID: 7400000, guid: 40203efb0c0061c4c8d02060fa6b6791, type: 2}
+  - {fileID: 7400000, guid: 19fb4d165cda607429367d3895fc2a55, type: 2}
+  - {fileID: 7400000, guid: bd1bc8de7f1d8bb4db615c21982c8829, type: 2}
+  - {fileID: 7400000, guid: bc542d7f1cf91c947b3590b3f83854b2, type: 2}
   down:
-  - {fileID: 7400000, guid: 571ef2475b922064e986d363a571edac, type: 2}
+  - {fileID: 7400000, guid: 31e6459b70d0fec4488243c75e270560, type: 2}
+  - {fileID: 7400000, guid: ec0d13ba2d768f143abc8cb831df4731, type: 2}
+  - {fileID: 7400000, guid: 7a550c1170b0de24a8e0690110489a53, type: 2}
+  - {fileID: 7400000, guid: 6431741f1427a0a4f8be334c406c7126, type: 2}
   left:
   - {fileID: 7400000, guid: 391d9cd17c630d64a8c7cb4a3af4bc1a, type: 2}
   right:
