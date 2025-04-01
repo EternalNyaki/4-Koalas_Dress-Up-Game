@@ -49,7 +49,7 @@ public class DialogueManager : Singleton<DialogueManager>
         if (story.canContinue)
         {
             //Play next line of dialogue on interaction
-            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 _audioSource.PlayOneShot(interactSound);
                 mainText.text = story.Continue();
@@ -81,7 +81,7 @@ public class DialogueManager : Singleton<DialogueManager>
             }
 
             //Select dialogue option on interaction
-            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 _audioSource.PlayOneShot(interactSound);
                 story.ChooseChoiceIndex(_selectedChoice);
@@ -91,7 +91,7 @@ public class DialogueManager : Singleton<DialogueManager>
         else
         {
             //If there is no more dialogue, resume game on interaction
-            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 _audioSource.PlayOneShot(interactSound);
                 story.ResetState();
@@ -123,7 +123,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 PauseModeManager.Instance.SetPauseMode(PauseMode.Unpaused);
             }
         }
-        else if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        else if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z))
         {
             TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameStart);
 

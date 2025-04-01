@@ -33,7 +33,7 @@ public abstract class InteractableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_player != null && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        if (_player != null && Input.GetKeyDown(KeyCode.Z))
         {
             Interact();
         }

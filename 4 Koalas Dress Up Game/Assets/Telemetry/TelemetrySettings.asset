@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: 4 Koalas
   secret: archaeologist language
-  _version: playtest_v01
+  _version: playtest_v02
   _serverURL: https://telemetry-js-792bae8f0c9a.herokuapp.com/
   serverCommunication: 1
   debugLogging: 0
