@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7825540823117907961}
   - component: {fileID: 5736404545542276408}
-  - component: {fileID: 1591432630164722280}
-  - component: {fileID: 3015861066914430385}
   - component: {fileID: 4287083223795409635}
   m_Layer: 0
   m_Name: Manager
@@ -52,38 +50,6 @@ MonoBehaviour:
   defaultPants: {fileID: 11400000, guid: a19f2cbe48b1eab46b95e2810a7b52ed, type: 2}
   defaultShoes: {fileID: 11400000, guid: 6247284cc1f65f64489f2aa302b7761f, type: 2}
   exitSound: {fileID: 8300000, guid: 968b59551d3042640a8ca02b15d6ba65, type: 3}
---- !u!114 &1591432630164722280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6736105861560933991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e062d92483d52a4a949c8c66a1c97bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3015861066914430385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6736105861560933991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 286038c7bf69e8046b2933b67bf376bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Settings>k__BackingField: {fileID: 11400000, guid: 3149aca63ef0c1a44bc61b1a0e8aa054, type: 2}
-  _section: Overworld City
-  OnConnectionSuccess:
-    m_PersistentCalls:
-      m_Calls: []
-  OnConnectionFail:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!82 &4287083223795409635
 AudioSource:
   m_ObjectHideFlags: 0

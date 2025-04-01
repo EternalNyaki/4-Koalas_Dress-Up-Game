@@ -29,8 +29,6 @@ public class PlayerController : RPGMovement
 
         if (_positionLogTimer > positionLogInterval)
         {
-            TelemetryLogManager.Instance.LogPlayerPosition(this, transform.position);
-
             _positionLogTimer -= positionLogInterval;
         }
 

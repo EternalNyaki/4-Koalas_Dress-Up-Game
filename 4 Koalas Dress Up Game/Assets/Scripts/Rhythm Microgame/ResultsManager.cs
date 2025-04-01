@@ -27,8 +27,6 @@ public class ResultsManager : MonoBehaviour
         {
             resultsText.text = "Radical!!!";
         }
-
-        TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameComplete);
     }
 
     void Update()

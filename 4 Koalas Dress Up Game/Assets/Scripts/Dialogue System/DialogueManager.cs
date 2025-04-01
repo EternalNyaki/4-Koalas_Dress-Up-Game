@@ -130,9 +130,6 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         else if (story.currentTags.Contains("microgame") && Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
         {
-            //#microgame tag logic
-            TelemetryLogManager.Instance.LogEvent(this, TelemetryLogManager.EventType.MicrogameStart);
-
             PlayerManager.Instance.SetScene("Rhythm Microgame");
         }
     }
