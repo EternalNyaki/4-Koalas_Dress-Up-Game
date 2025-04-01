@@ -10,18 +10,8 @@ public class ManagerPassthrough : MonoBehaviour
         PlayerManager.Instance.SetScene(sceneName);
     }
 
-    public void LogGameEnd()
-    {
-        TelemetryLogManager.Instance.GameEnd();
-    }
-
     public void QuitGame()
     {
         PlayerManager.Instance.QuitGame();
-    }
-
-    public void LogGameStart()
-    {
-        TelemetryLogManager.Instance.GameStart();
     }
 }
