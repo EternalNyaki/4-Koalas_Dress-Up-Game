@@ -33,7 +33,7 @@ public class ResultsManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             PlayerManager.Instance.SetScene("Overworld City");
         }

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: Koalas
   secret: archaeologist language
-  _version: playtest_v01
+  _version: playtest_v04
   _serverURL: https://telemetry-js-792bae8f0c9a.herokuapp.com/
-  serverCommunication: 2
+  serverCommunication: 1
   debugLogging: 0
   <SetupId>k__BackingField: MSI > 4 Koalas Dress Up Game / 4 Koalas Dress Up Game
     @ etern-2079794086
