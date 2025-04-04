@@ -28,6 +28,9 @@ public abstract class InteractableObject : MonoBehaviour
     protected virtual void Initialize()
     {
         _audioSource = GetComponent<AudioSource>();
+        interactionIndicator = GetComponent<SpriteRenderer>();
+
+        interactionIndicator.color = new Color(255f, 255f, 255f, 100f);
     }
 
     // Update is called once per frame
@@ -47,7 +50,7 @@ public abstract class InteractableObject : MonoBehaviour
 
         if (_player != null && interactionIndicator != null)
         {
-            interactionIndicator.color = new(255f, 255f, 255f, 255f);
+            interactionIndicator.color = new Color(255f, 255f, 255f, 255f);
         }
     }
 
@@ -58,7 +61,7 @@ public abstract class InteractableObject : MonoBehaviour
         {
             if (_player != null && interactionIndicator != null)
             {
-                interactionIndicator.color = new(255f, 255f, 255f, 175f);
+                interactionIndicator.color = new Color(255f, 255f, 255f, 100f);
             }
 
             _player = null;
